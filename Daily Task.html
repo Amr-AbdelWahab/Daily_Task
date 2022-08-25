@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--load all Font Awesome styles -->
+    <link href="css/all.css" rel="stylesheet">
+    <!--load my main style -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Daily Task</title>
+</head>
+<body class="body  ">
+    <div class="crud">
+            <header>
+                <h1>Daily Task</h1>
+                <p>SEG Project Progress</p>
+                <button id="lightMode" ></button>
+            </header>
+
+            <!-- inputs -->
+            <section class="inputs">
+                
+                <!---------------- Project Data ---------------------->
+                <div class="projectData dFlexRow jcSpaceBetween width100 ">
+                    <input placeholder="Project name" type="text" id="ProjectName" class="prData  width100"  >
+                    <input placeholder="Path @ Server" type="text" id="Path" class="prData "  >
+                    <!-- <input placeholder="Year" type="text" id="Year" class="prData  "  > -->
+                    <input placeholder="Task description" type="text" id="TaskDescription" class="prData width100"  >
+                </div>              
+                <!---------------- REQUIRED SYSTEMS ---------------------->
+                <div class="reqSystem dFlexRow  ">
+
+                    <p class="  ">REQUIRED SYSTEMS</p>
+
+                    <!---------------- Technical Office ---------------------->
+                    <div class="TO department   width100">
+                        <span>Technical Office</span>
+                        <div>
+                            <input placeholder="Arch" type="checkbox" id="Arch">
+                            <label for="Arch">Arch</label><span id="arch-sh"></span>
+                        </div> 
+                        <div>
+                            <input placeholder="FS" type="checkbox" id="FS">
+                            <label for="FS">FS</label>
+                        </div> 
+                        <div>
+                            <input placeholder="RCP" type="checkbox" id="RCP">
+                            <label for="RCP">RCP</label>
+                        </div> 
+                        <div>
+                            <input placeholder="REQ" type="checkbox" id="REQ">
+                            <label for="REQ">REQ.</label>
+                        </div> 
+                    </div>
+
+                    <!---------------- ELEC ---------------------->
+                    <div class="ELEC department width100 ">
+                        <span>ELEC</span>
+                        <div>
+                            <input placeholder="ELEC" type="checkbox" id="ELEC">
+                            <label for="ELEC">ELEC</label>
+                        </div> 
+                        <div>
+                            <input placeholder="LC" type="checkbox" id="LC">
+                            <label for="LC">LC</label>
+                        </div> 
+                        <div>
+                            <input placeholder="FA" type="checkbox" id="FA">
+                            <label for="FA">FA</label>
+                        </div> 
+                    </div>
+
+                    <!---------------- PLUM ---------------------->
+                    <div class="PLUM department width100">
+                        <span>PLUM</span>
+                        <div>
+                            <input placeholder="WS" type="checkbox" id="WS">
+                            <label for="WS">WS</label>
+                        </div> 
+                        <div>
+                            <input placeholder="DR" type="checkbox" id="DR">
+                            <label for="DR">DR</label>
+                        </div> 
+                        <div>
+                            <input placeholder="FF" type="checkbox" id="FF">
+                            <label for="FF">FF</label>
+                        </div> 
+                    </div>
+
+                    <!---------------- HVAC ---------------------->
+                    <div class="HVAC department width100">
+                        <span>HVAC</span>
+                        <div>
+                            <input placeholder="AC" type="checkbox" id="AC">
+                            <label for="AC">AC</label>
+                        </div> 
+                        <div>
+                            <input placeholder="MV" type="checkbox" id="MV">
+                            <label for="MV">MV</label>
+                        </div> 
+                    </div>
+                        
+
+                </div>    
+
+                <button class="bigBtn create" id="create">+ Create Task +</button>
+            
+            </section>
+            <!--END inputs -->
+
+
+            
+            <!-- search -->
+            <section class="search">
+                <div class="input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search" id="search">
+                </div>
+                <div class="btnSearch ">
+                    <button class="bigBtn ">by Project Name</button>
+                    <button class="bigBtn ">by Task Description</button>
+                </div>
+            </section>
+            <!-- END search -->
+
+            <div id="delAllContainer">
+                
+            </div>
+
+            <!-- output -->
+            <section class="output">
+                <table>
+                    <tr>
+                        <th>S.N</th>
+                        <th>Project Name</th>
+                        <th>Task Description</th>
+                        <th>Path @ Server</th>
+
+                        <th>Arch</th>
+                        <th>FS</th>
+                        <th>REQ.</th>
+                        
+                        <th>ELEC</th>
+                        <th>LC</th>
+                        <th>FA</th>
+                        
+                        <th>FF</th>
+                        <th>DR</th>
+                        <th>WS</th>
+                        
+                        <th>AC</th>
+                        <th>MV</th>
+                        
+                        <th>update</th>
+                        <th>delete</th>
+
+                    </tr>
+
+                    <tbody id="tbody">
+                        <!--
+                        <tr>
+                            <td>01</td>
+                            <td>Mixed use</td>
+                            <td>QCD Submission</td>
+                            <td>Various </td>
+                            <td>2022</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td><button>update</button></td>
+                            <td><button>delete</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>01</td>
+                            <td>Mixed use</td>
+                            <td>QCD Submission</td>
+                            <td>Various </td>
+                            <td>2022</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td><button>update</button></td>
+                            <td><button>delete</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>01</td>
+                            <td>Mixed use</td>
+                            <td>QCD Submission</td>
+                            <td>Various </td>
+                            <td>2022</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td><button>update</button></td>
+                            <td><button>delete</button></td>
+                        </tr> -->
+
+
+
+                    </tbody>
+
+                </table>
+                
+
+
+            </section>
+            <!-- END output -->
+        
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
