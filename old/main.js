@@ -12,9 +12,6 @@ let delAllContainer = document.getElementById('delAllContainer');
 let mode = 'create';
 let tmp;
 
-// define taskData
-let tasksData = JSON.parse(localStorage.getItem('tasks')) || [];
-
 
 // create task
 
